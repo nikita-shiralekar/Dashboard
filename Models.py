@@ -86,6 +86,13 @@ class Standing_Instructions(db.Model):
     standing_instructions_action = db.Column(db.Integer,db.ForeignKey("standing_instruction_act.standing_id"),unique=True, nullable=True)
     Currency_Code = db.Column(db.String(40))
 
+    def __str__(self):
+        return f'''{self.Business_Entity,self.Corp_Action_Type}'''
+
+    def __repr__(self):
+        return str(self.Country_Code)
+        
+
 db.create_all()
 
 
